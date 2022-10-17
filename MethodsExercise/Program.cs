@@ -60,11 +60,55 @@
             string hatedAnimal = Console.ReadLine();
             return hatedAnimal;
         }
+        public static int SumParams(params int[] list)
+        {
+            int sumP = 0;
+            for (int i = 0; i < list.Length; i++)
+            {
+                sumP = sumP + list[i];
+            }
+
+            return sumP;
+        }
+
+        public static int Sum(int num1, int num2)
+        {
+            var sum = num1 + num2;
+            return sum;
+        }
+
+        public static int Sub(int num1, int num2)
+        {
+            var sub = num1 - num2;
+            return sub;
+        }
+
+        public static int Mult(int num1, int num2)
+        {
+            var mult = num1 * num2;
+            return mult;
+        }
+
+        public static int Div(int num1, int num2)
+        {
+            var div = num1 / num2;
+            return div;
+        }
+
+        public static int Mod(int num1, int num2)
+        {
+            var mod = num1 % num2;
+            return mod;
+        }
+
+
+
 
         static void Main(string[] args)
         {
+            // EXERCISE 1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            Console.WriteLine("Exercise 1:\n");
             Console.WriteLine("Welcome!\nPlease answer the following questions to enjoy a personalized mad lib version of The Three Little Pigs story.\n");  
-
 
             var name = Greetings();
             var favoriteColor = FavoriteColor();
@@ -76,6 +120,7 @@
             var buildMat3 = BuildingMat3();
             var hatedAnimal = HatedAnimal();
 
+            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------------------------------\n");
             Console.WriteLine($"{name}, thank you for answering all those questions! Your personalized story will now begin.\n");
 
             Console.WriteLine($"Once upon a time there was an old mother {favoriteAnimal} who had three little {favoriteAnimal}s and not enough food to feed them.\nSo when they were old enough, she sent them out into the world to seek their fortunes.");
@@ -115,6 +160,63 @@
             Console.WriteLine($"Well, {name}, I hope you enjoyed this mad lib version of The Three Little Pigs.");
             Console.WriteLine($"Honestly, {name}, this was a lot to do! Maybe I won't think of another ridiculous idea for the next exercise...\n");
             Console.WriteLine("Anyways, thank you for reading my story!");
+
+            //END OF EXERCISE 1 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+            //EXERCISE 2 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+
+            Console.WriteLine("Exercise 2\n");
+            Console.WriteLine("Please enter two numbers to be added:");
+            var sum1 = int.Parse(Console.ReadLine());
+            var sum2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Thank you.");
+            int sum = Sum(sum1, sum2);
+            Console.WriteLine($"The sum of {sum1} and {sum2} is {sum}.\n");
+
+            Console.WriteLine("Please enter two numbers to be subtracted:");
+            var sub1 = int.Parse(Console.ReadLine());
+            var sub2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Thank you.");
+            int sub = Sub(sub1, sub2);
+            Console.WriteLine($"{sub1} minus {sub2} is {sub}.\n");
+
+            Console.WriteLine("Please enter two numbers to be multiplied:");
+            var mult1 = int.Parse(Console.ReadLine());
+            var mult2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Thank you.");
+            int mult = Mult(mult1, mult2);
+            Console.WriteLine($"{mult1} and {mult2} multiplied is {mult}.\n");
+
+            Console.WriteLine("Please enter two numbers to be divided:");
+            var div1 = int.Parse(Console.ReadLine());
+            var div2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Thank you.");
+            int div = Div(div1, div2);
+            Console.WriteLine($"{div1} divided by {div2} is {div}.\n");
+
+            Console.WriteLine("Please enter two numbers to be divided and I will retrieve the remainder:");
+            var mod1 = int.Parse(Console.ReadLine());
+            var mod2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Thank you.");
+            int mod = Mod(mod1, mod2);
+            Console.WriteLine($"The remainder of {mod1} divided by {mod2} is {mod}.\n");
+
+
+            //Not sure if I did this challenge mode correctly
+            Console.WriteLine("Please enter a number to be added (1/4):");
+            var sumP1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter a number to be added (2/4):");
+            var sumP2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter a number to be added (3/4):");
+            var sumP3 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter a number to be added (4/4):");
+            var sumP4 = int.Parse(Console.ReadLine());
+
+            var sumP = SumParams(sumP1, sumP2, sumP3, sumP4);
+            Console.WriteLine($"The sum of all those numbers you just feed me is: {sumP}");
+            //END OF EXERCISE 2 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         }
     }
